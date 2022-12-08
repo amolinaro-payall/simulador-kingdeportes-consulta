@@ -4,7 +4,7 @@ const puerto = 8085;
 app.use(Express.json());
 const timeout = 30000;
 let nro = 0;
-app.post("/kingdeportes/todo", (request, response) =>
+app.post("/gecko/api/payall/payin/", (request, response) =>
 {
     console.log("<<<<<Nueva Peticion:>>>>>" + (nro++))
     console.log(request.body)
