@@ -1,10 +1,10 @@
 import Express from "express";
 const app = Express();
-const puerto = 8085;
+const puerto = 8070;
 app.use(Express.json());
 const timeout = 30000;
 let nro = 0;
-app.post("/gecko/api/payall/payin/", (request, response) =>
+app.post("/gecko/api/payall/term/", (request, response) =>
 {
     console.log("<<<<<Nueva Peticion:>>>>>" + (nro++))
     console.log(request.body)
@@ -12,38 +12,26 @@ app.post("/gecko/api/payall/payin/", (request, response) =>
     
     if(request.body)
     {
-        setTimeout(() =>
-        {
-        response.status(400).send(
-            {
-                
-            }
-            )
-        }, timeout);
-    }else{
+        response.status(200).send(
+                {
+                    "id": "13717",
+                    "username": "adrian2005",
+                    "email": "adri*****26@gmail.com",
+                    "phone": "+580******9804",
+                    "document": "25000000"
+                }
+        )
+    }else
+    {
         response.status(200).send(
             {
-                "Merchant_Identify":
-                {
-                    "integratorId": "1",
-                    "merchantId": "150332",
-                    "terminalId": "1"
-                },
-                "transaction_c2p_response":
-                {
-                    "processing_date": "2019-09-12 03:07:53 VET",
-                    "trx_status": "approved",
-                    "trx_type": "compra",
-                    "payment_method": "c2p",
-                    "payment_reference": "0057718281656",
-                    "invoice_number": "113466",
-                    "amount": 1.00,
-                    "currency": "ves",
-                    "trx_internal_status": "0000",
-                    "authorization_code": "002166"
-                }
+                "id": "13717",
+                "username": "adrian2005",
+                "email": "adri*****26@gmail.com",
+                "phone": "+580******9804",
+                "document": "25000000"
             }
         )
-        }
-    })
+    }
+})
 app.listen(puerto, () => console.log("Escuchando en el puerto: "+ puerto))
