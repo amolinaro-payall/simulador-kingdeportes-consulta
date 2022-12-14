@@ -13,24 +13,50 @@ app.post("/gecko/api/payall/term/", (request, response) =>
     if(request.body)
     {
         response.status(200).send(
-                {
+            {
+                "resultados": 2,
+                "items": [
+                  {
                     "id": "13717",
                     "username": "adrian2005",
                     "email": "adri*****26@gmail.com",
                     "phone": "+580******9804",
                     "document": "25000000"
-                }
+                  },
+                  {
+                    "id": "28124",
+                    "username": "manuel23",
+                    "email": "manu*****ma@gmail.com",
+                    "phone": "+580******9095",
+                    "document": "25000000"
+                  }
+                ],
+                "term": "04247539"
+              }
         )
     }else
     {
         response.status(200).send(
             {
-                "id": "13717",
-                "username": "adrian2005",
-                "email": "adri*****26@gmail.com",
-                "phone": "+580******9804",
-                "document": "25000000"
-            }
+                "resultados": 2,
+                "items": [
+                  {
+                    "id": "13717",
+                    "username": "adrian2005",
+                    "email": "adri*****26@gmail.com",
+                    "phone": "+580******9804",
+                    "document": "25000000"
+                  },
+                  {
+                    "id": "28124",
+                    "username": "manuel23",
+                    "email": "manu*****ma@gmail.com",
+                    "phone": "+580******9095",
+                    "document": "25000000"
+                  }
+                ],
+                "term": "04247539"
+              }
         )
     }
 })
