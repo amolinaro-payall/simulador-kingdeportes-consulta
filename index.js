@@ -4,6 +4,7 @@ const puerto = 8070;
 app.use(Express.json());
 const timeout = 30000;
 let nro = 0;
+let envio = '{"resultados": 2,"items": [{"id": "13717","username": "adrian2005","email": "adri*****26@gmail.com","phone": "+580******9804","document": "25000000"},{"id": "28124","username": "manuel23","email": "manu*****ma@gmail.com","phone": "+580******9095","document": "25000000"}],"term": "04247539"}';
 app.post("/gecko/api/payall/term/", (request, response) =>
 {
     console.log("<<<<<Nueva Peticion:>>>>>" + (nro++))
