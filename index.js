@@ -11,7 +11,7 @@ app.post("/gecko/api/payall/term/", (request, response) =>
     console.log("<<<<<Fin Peticion>>>>>" + (nro))
     
     if(request.body.transaction_c2p.destination_bank_id != '0115' && request.body.transaction_c2p.trx_type == 'anulacion'){
-        response.status(200).send(
+        response.status(200).json(
             {
                 "resultados": 2,
                 "items": [
@@ -34,7 +34,7 @@ app.post("/gecko/api/payall/term/", (request, response) =>
               }
         )
     }else{
-      response.status(200).send(
+      response.status(200).json(
         {
           "resultados": 2,
           "items": [{
